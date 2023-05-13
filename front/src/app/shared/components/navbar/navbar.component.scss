@@ -1,0 +1,19 @@
+@use "../../../../assets/styles/index.scss" as *;
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: $color3;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.096);
+  img {
+    max-width: 7rem;
+  }
+
+  i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+  }
+}

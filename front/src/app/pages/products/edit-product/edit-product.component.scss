@@ -1,0 +1,44 @@
+@use "../../../../assets/styles/index.scss" as *;
+
+.spinner {
+  height: 80vh;
+}
+
+.container {
+  form {
+    margin-bottom: 2rem;
+
+    padding: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.521);
+    border-radius: 10px;
+  }
+
+  section {
+    margin: 1rem 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    color: $color2;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.199);
+    text-decoration: underline;
+  }
+
+  p-button {
+    margin-right: 1rem !important;
+  }
+}
+
+::ng-deep .p-inputtext {
+  width: 200px;
+  display: block;
+
+  @include screenMedium {
+    width: 500px;
+  }
+}
+
+::ng-deep p-inputnumber,
+.p-inputnumber {
+  display: block !important;
+}

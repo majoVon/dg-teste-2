@@ -1,0 +1,54 @@
+@use "../../../assets/styles/index.scss" as *;
+
+.container {
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, $color4, $color3);
+  #card {
+    max-width: 100%;
+    text-align: center;
+
+    @include screenMedium {
+      width: 40rem;
+    }
+
+    img {
+      width: 7rem;
+      margin-top: 2rem;
+    }
+
+    #google-login {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.452);
+      padding: 1rem;
+      max-width: 20rem;
+      margin: auto;
+      border-radius: 1rem;
+      transition: 1s;
+      cursor: pointer;
+      &:hover {
+        background-color: #ecebeb7a;
+        transform: scale(0.9);
+        border: 1px solid $color2;
+      }
+      i {
+        margin-right: 1rem;
+        color: rgb(28, 89, 219);
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .error {
+    margin-right: 1rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}

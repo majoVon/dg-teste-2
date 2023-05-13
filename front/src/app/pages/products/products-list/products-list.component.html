@@ -1,0 +1,43 @@
+<ng-template #spinnerTemplate>
+  <div class="spinner">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>
+
+<div class="container" *ngIf="(products | async) as productsArray; else spinnerTemplate">
+  <!--Sessão de Ações-->
+  <section>
+    <div class="select">
+      <p-cascadeSelect [(ngModel)]="orderBy" [options]="orderOptions" optionLabel="name" optionGroupLabel="name"
+        [optionGroupChildren]="['states', 'cities']" [style]="{ minWidth: '14rem' }" placeholder="Ordernar por"
+        (onChange)="order()"></p-cascadeSelect>
+    </div>
+
+    <div>
+      <p-button icon="pi pi-plus" styleClass="p-button-rounded p-button-primary" pTooltip="Novo Produto"
+        routerLink="/admin/novo-produto"></p-button>
+    </div>
+  </section>
+
+  <!--Tabela-->
+  <p-table [value]="productsArray" [tableStyle]="{ 'width': '100%' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Preço</th>
+        <th>Vendas</th>
+        <th>Deletar</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr id="tr">
+        <td routerLink="/admin/{{product?.id}}">{{ product?.name }}</td>
+        <td routerLink="/admin/{{product?.id}}">{{ product?.department }}</td>
+        <td routerLink="/admin/{{product?.id}}">R${{ product?.price }}</td>
+        <td routerLink="/admin/{{product?.id}}">{{ product?.sales }}</td>
+        <td (click)="deleteProduct(product?.id, product?.name)"><i pTooltip="Excluir" class="pi pi-trash"></i></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

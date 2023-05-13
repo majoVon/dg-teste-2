@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dg-teste": {
+      "hosting": {
+        "front": [
+          "dg-teste"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dg-teste"
+  }
+}

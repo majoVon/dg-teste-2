@@ -1,0 +1,16 @@
+<div class="container">
+  <p-card id="card" header="Faça login para continuar">
+    <div id="google-login" (click)="loginWithGoogle()">
+      <i class="pi pi-google"></i>
+      Login com o Google
+    </div>
+
+    <div>
+      <img src="../../../assets/images/logo.png" alt="">
+    </div>
+  </p-card>
+
+  <div *ngIf="showErrorMessage" class="error">
+    <p-messages [(value)]="errorMessage" [enableService]="showErrorMessage" [escape]="true"></p-messages>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+@use "../../../../assets/styles/index.scss" as *;
+
+.container {
+  #tr {
+    cursor: pointer;
+    &:hover {
+      background-color: #fdfafa;
+    }
+  }
+
+  section {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .select {
+    margin-right: 1rem;
+  }
+
+  .pi-trash {
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.spinner {
+  height: 80vh;
+}

@@ -1,0 +1,54 @@
+<ng-template #spinner>
+  <div class="spinner">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>
+
+<div class="container" *ngIf="product; else spinner">
+  <form [formGroup]="form">
+    <h1>Editar produto</h1>
+    <!--nome-->
+    <section>
+      <input-validator>
+        <label htmlFor="name">Nome do produto</label>
+        <input type="text" pInputText id="name" formControlName="name" />
+      </input-validator>
+    </section>
+
+    <!--Departamento-->
+    <section>
+      <input-validator>
+        <label htmlFor="department">Departamento</label>
+        <input pInputText id="department" formControlName="department" />
+      </input-validator>
+    </section>
+
+    <!--Preço-->
+    <section>
+      <input-validator>
+        <label htmlFor="price">Preço</label>
+        <p-inputNumber formControlName="price"></p-inputNumber>
+      </input-validator>
+
+    </section>
+    <!--Vendas-->
+    <section>
+      <input-validator>
+        <label htmlFor="sales">Número de Vendas</label>
+        <p-inputNumber formControlName="sales"></p-inputNumber>
+      </input-validator>
+
+    </section>
+    <div class="button">
+      <p-button label="Voltar" styleClass="p-button-outlined" (click)="back()"></p-button>
+
+
+      <p-button *ngIf="!onSave; else loading" [disabled]="form.invalid || !form.touched" (click)="onSubmit()"
+        label="Confirmar" icon="pi pi-check" iconPos="right"></p-button>
+
+      <ng-template #loading>
+        <p-button [disabled]="true" label="Carregando..." icon="pi pi-check" iconPos="right"></p-button>
+      </ng-template>
+    </div>
+  </form>
+</div>
